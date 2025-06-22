@@ -14,5 +14,23 @@ datasource db {
   url      = "postgresql://neondb_owner:npg_1FjINaiqu0bg@ep-mute-dust-a84czszh-pooler.eastus2.azure.neon.tech/neondb?sslmode=require"
 }
 
+model User {
+  id Int @id @default(autoincrement())
+  email String @unique
+  name String?
+  firstName String?
+  lastName String?
+  password String
+}
+
+model Todo { 
+  id Int @id @default(autoincrement())
+  title String
+  done Boolean @default(false)
+  description String?
+  userId Int
+}
+
+
 
 
